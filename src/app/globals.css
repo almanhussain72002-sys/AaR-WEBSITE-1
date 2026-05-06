@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: #03060b;
+  --foreground: #f5f8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(0, 163, 255, 0.18), transparent 38rem),
+    radial-gradient(circle at 92% 24%, rgba(120, 198, 255, 0.1), transparent 30rem),
+    #03060b;
+  color: var(--foreground);
+}
+
+body::selection {
+  background: rgba(0, 163, 255, 0.35);
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 24px 90px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(22px);
+}
+
+.quiet-card {
+  border-radius: 2rem;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px);
+}
+
+.premium-image {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035));
+}
+
+.nav-link-premium {
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 180ms ease;
+}
+
+.nav-link-premium::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.1rem;
+  width: 0;
+  height: 1px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, transparent, rgba(0, 163, 255, 0.95), transparent);
+  transform: translateX(-50%);
+  transition: width 220ms ease;
+}
+
+.nav-link-premium:hover {
+  color: white;
+}
+
+.nav-link-premium:hover::after {
+  width: 100%;
+}
+
+.nav-call-button {
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.045), 0 12px 34px rgba(0, 0, 0, 0.18);
+}
+
+.nav-call-button:hover {
+  box-shadow: inset 0 0 0 1px rgba(0, 163, 255, 0.22), 0 0 28px rgba(0, 163, 255, 0.16);
+}
+
+.nav-consult-button {
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22);
+}
+
+.service-showcase-card {
+  overflow: hidden;
+  border-radius: 2.5rem;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.095), rgba(255, 255, 255, 0.028)),
+    #080c13;
+  box-shadow: 0 38px 120px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.055);
+  backdrop-filter: blur(26px);
+  transform: translateZ(0);
+}
+
+.service-glass-panel {
+  border-radius: 1.8rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045)),
+    rgba(5, 8, 13, 0.62);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(28px) saturate(130%);
+}
+
+.apple-button-primary,
+.apple-button-secondary,
+.apple-button-hero,
+.apple-button-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.apple-button-primary {
+  background: #f5f8ff;
+  color: #03060b;
+  padding: 0.7rem 1.15rem;
+  font-size: 0.875rem;
+}
+
+.apple-button-primary:hover {
+  background: #00a3ff;
+  color: white;
+}
+
+.apple-button-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 0.7rem 1.15rem;
+  font-size: 0.875rem;
+}
+
+.apple-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.apple-button-hero {
+  justify-content: center;
+  background: #f5f8ff;
+  color: #03060b;
+  padding: 1rem 1.55rem;
+}
+
+.apple-button-hero:hover {
+  background: #00a3ff;
+  color: white;
+}
+
+.apple-button-hero-secondary {
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 1rem 1.55rem;
+}
+
+.apple-button-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.field-control {
+  height: 3.25rem;
+  width: 100%;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0 1rem;
+  color: white;
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.045);
+  transition: box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.field-control:focus {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(0, 163, 255, 0.55);
+}
+
+.field-control::placeholder {
+  color: rgba(184, 193, 209, 0.54);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
